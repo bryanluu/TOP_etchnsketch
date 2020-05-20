@@ -2,11 +2,13 @@
 function createEtchNSketch(ROWS, COLS) {
   let container = document.querySelector("#container");
 
-  let size = container.clientWidth/ROWS;
-  console.log(size)
+  let size = container.clientWidth/COLS;
 
+  container.style.width = size*ROWS;
+  container.style.height = size*COLS;
   container.style["grid-template-rows"] = ROWS;
   container.style["grid-template-columns"] = COLS;
+  container.style["border"] = "5px ridge gray";
 
   for (let row = 0; row < ROWS; row++)
   {
@@ -40,6 +42,7 @@ function reset() {
   hitNodes.forEach(node => {
     node.classList.remove("hit");
   })
+  container.style["border"] = "none";
 }
 
 function getDimensions() {
