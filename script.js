@@ -13,10 +13,22 @@ for (let row = 0; row < ROWS; row++)
     const div = document.createElement("div");
     div.style.width = size + "px";
     div.style.height = size + "px"
-    div.style.backgroundColor = "cyan";
-    div.style.border = "1px solid black";
+    // div.style.backgroundColor = "cyan";
+    // div.style.border = "1px solid black";
     div.style["grid-row"] = row+1;
     div.style["grid-column"] = col+1;
+    div.addEventListener("mouseover", function(e) {colorIn(this);})
     container.appendChild(div);
   }
+}
+
+function colorIn(node) {
+  node.classList.add("hit");
+}
+
+function reset() {
+  let hitNodes = document.querySelectorAll(".hit");
+  hitNodes.forEach(node => {
+    node.classList.remove("hit");
+  })
 }
