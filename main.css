@@ -1,12 +1,46 @@
-#container {
+#widget {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+}
+
+#container {
   display: grid;
-  border: 1px ridge black;
+  border: 5px ridge gray;
+  width: 960px;
 }
 
 .hit {
-  background-color: cyan;;
+  background-color: black;
+}
+
+#title {
+  position: relative;
+  display: block;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 5px;
+  text-align: center;
+}
+
+h1 {
+  font-family: Helvetica;
+  font-weight: bold;
+  background-color: cyan;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button {
+  font-family: Helvetica;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 3px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  box-shadow: 0 0 3px black;
 }
